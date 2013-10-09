@@ -1,0 +1,215 @@
+html, body {
+	height: 100%;
+}
+
+html, body, h1, h2 {
+	margin: 0;
+}
+
+header {
+	position: relative;
+	height: 50%;
+}
+
+h1 {
+	position: absolute;
+	background: #06799F;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	box-shadow: 0px 4px 10px #303030;
+	font-size: 50px;
+	line-height: 200px;
+	color: #CCC;
+	text-shadow: 2px 2px 5px #333;
+	text-indent: -90000px;
+}
+
+h2 {
+	text-align: center;
+}
+
+header img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 400px;
+	margin-left: -200px;
+	margin-top: -200px;
+}
+
+ul {
+	list-style: none;
+	margin: 0 auto;
+	width: 530px;
+	height: 110px;
+	position: absolute;
+	left: 50%;
+	margin-left: -265px;
+	top: 30px;
+}
+
+li {
+	color: #06799F;
+	font-size: 40px;
+}
+
+li a:-webkit-any-link {
+	color: #06799F;
+}
+
+li a {
+	color: #06799F;
+}
+
+li a:hover {
+	color: #fff;
+}
+
+li i {
+	color: #FFF;
+	margin-right: 7px;
+	font-size: 40px;
+}
+
+i.icon-phone-sign {
+	font-size: 46px;
+}
+
+@font-face {
+  font-family: gsBold;
+  src: url('../fonts/gs_bold.ttf') format('truetype'), url('../fonts/gs_bold.eot') format('eot'), url('../fonts/gs_bold.woff') format('woff');
+}
+
+#contactSection {
+	height: 50%;
+}
+
+#contactInfo {
+	height: 100%;
+	background: #61B4CF;
+}
+
+#contactInfo .contact {
+	position: relative;
+	background: #024E68;
+	margin: 0;
+	height: 60%;
+	padding: 0;
+	box-shadow: 0px -4px 6px #303030;
+}
+
+#contactInfo .message {
+	height: 40%;
+}
+
+#contactInfo h2 {
+	font-family: gsBold;
+	font-size: 35px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-shadow: 0px 2px 3px #000000;
+	color: #FFF;
+}
+
+#contactInfo span {
+	text-align: center;
+	display: block;
+	font-size: 24px;
+	color: #FFF;
+	text-shadow: 0px 2px 4px #000000;
+	font-family: gsBold;
+}
+
+@media (max-height: 800px) {
+	header img {
+		width: 300px;
+		left: 50%;
+		top: 50%;
+		margin-left: -150px;
+		margin-top: -150px;
+
+	}
+
+	#contactInfo .message {
+		min-height: 160px;
+	}
+}
+
+@media (max-height: 500px) {
+	header img {
+		width: 200px;
+		left: 50%;
+		top: 50%;
+		margin-left: -100px;
+		margin-top: -100px;
+
+	}
+}
+
+@media (max-width: 767px) {
+	body { 
+		padding: 0;
+	}
+
+	#contactInfo h2 { 
+		font-size: 25px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	#contactInfo span {
+		font-size: 14px;
+		padding: 0 10px;
+	}
+
+	ul {
+		padding-left: 15px;
+	}
+
+	li {
+		font-size: 20px;
+	}
+
+	li i {
+		font-size: 20px;
+	}
+
+	i.icon-phone-sign {
+		font-size: 22px;
+	}
+}
+
+@media (max-width: 480px) { 
+	
+	header img {
+		left: 50%;
+		top: 50%;
+		width: 200px;
+		margin-left: -100px;
+		margin-top: -100px;
+	}
+
+	ul { 
+		padding-left: 0;
+		max-width: 100%;
+		margin-left: -125px;
+		width: 265px;
+	}
+
+	#contactInfo .message {
+		min-height: 145px;
+	}
+}
+
+@media (max-height: 400px) {
+	header img {
+		width: 160px;
+		left: 50%;
+		top: 50%;
+		margin-left: -80px;
+		margin-top: -80px;
+
+	}
+}
