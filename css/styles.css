@@ -199,10 +199,12 @@ nav a:hover {
 }
 
 .grass {
-	background: url("../img/grass.jpg");
-	height: 616px;
+	background: url("../img/grass-med.png");
+	height: 102px;
 	width: 100%;
 	float: left;
+	top: -102px;
+	position: relative;
 }
 
   /********************/
