@@ -5,12 +5,21 @@ $(document).ready(function() {
 
 		var Scroller = skrollr.init();
 
+		//cache common values
 		var $topMotto = $(".topTitle"),
 			mottoHeight = $topMotto.css("line-height"),
 			mottoHeight = mottoHeight.slice(0, mottoHeight.indexOf('px') - 1),
+			mottoSelectedPos = 0,
 			headerHeight = 480,
 			windowWidth = $(window).width(),
-			$nav = $("nav");
+			$nav = $("nav"),
+			$selectedNav = $nav.find(".selected"),
+			selectedNav = $selectedNav.attr("id"),
+			$homeLink = $nav.find("#homeLink"),
+			$valuesLink = $nav.find("#valuesLink"),
+			$servicesLink = $nav.find("#servicesLink"),
+			$contactLink = $nav.find("#contactLink");
+
 
 		var typewatch = function(){ //use this function to delay a function that gets called many times but doesn't need to (like onWindowResize events)
 			    var timer = 0;
@@ -24,11 +33,16 @@ $(document).ready(function() {
 			interval: "",
 			startFlipping: function() {
 				var randomPos,
-					positions = [0, -70, -140, -210, -280];
+					positions = [0, -70, -140, -210, -280],
+					positionsLastRemoved,
+					currentPos = $topMotto.css("margin-top");
 
 				this.interval = setInterval(function() {
-					randomPos = positions[Math.floor(Math.random() * positions.length)];
+					positionsLastRemoved = [0, -70, -140, -210, -280];
+					positionsLastRemoved.splice(positionsLastRemoved.indexOf(mottoSelectedPos), 1);
+					randomPos = positionsLastRemoved[Math.floor(Math.random() * positionsLastRemoved.length)];
 					$topMotto.css("margin-top", randomPos + "px");
+					mottoSelectedPos = randomPos;
 				},3000);
 			},
 
@@ -39,12 +53,49 @@ $(document).ready(function() {
 
 		blueOx.checkForNavChange = function($nav){
 			var positionLimit = headerHeight,
-			 	y = $(document).scrollTop();
+			 	y = $(document).scrollTop(),
+			 	headerPos = 0,
+			 	valuesPos = 600,
+			 	servicesPos = 3775,
+			 	contactPos = 4775;
+
+			 var clearNavSelected = function() {
+			 	$selectedNav.removeClass("selected");
+			 }
 
 			if ( y >= positionLimit ) {
 			    $nav.addClass("docked");
 			} else {
 			    $nav.removeClass("docked");
+			}
+
+			//update nav classes
+			if (y < valuesPos && selectedNav !== 'homeLink') {
+				selectedNav = 'homeLink';
+				clearNavSelected();
+				$selectedNav = $homeLink;
+				$homeLink.addClass("selected");
+			} else {
+				if (y >= valuesPos && y < servicesPos && selectedNav !== "valuesLink") {
+					selectedNav = 'valuesLink';
+					clearNavSelected();
+					$selectedNav = $valuesLink;
+					$valuesLink.addClass("selected");
+				} else {
+					if (y >= servicesPos && y < contactPos && selectedNav !== "servicesLink") {
+						selectedNav = 'servicesLink';
+						clearNavSelected();
+						$selectedNav = $servicesLink;
+						$servicesLink.addClass("selected");
+					} else {
+						if (y >= contactPos && selectedNav !== "contactLink") { 
+							selectedNav = 'contactLink';
+							clearNavSelected();
+							$selectedNav = $contactLink;
+							$contactLink.addClass("selected");
+						}
+					}
+				}
 			}
 		}
 
