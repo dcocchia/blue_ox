@@ -56,7 +56,7 @@ $(document).ready(function() {
 			 	y = $(document).scrollTop(),
 			 	headerPos = 0,
 			 	valuesPos = 600,
-			 	servicesPos = 3775,
+			 	servicesPos = 3400,
 			 	contactPos = 4775;
 
 			 var clearNavSelected = function() {
@@ -99,6 +99,32 @@ $(document).ready(function() {
 			}
 		}
 
+		blueOx.instateClouds = function() {
+			var screenWidth = $(window).width(),
+				$cloudContainer = $(".clouds"),
+				cloudWidth = 500,
+				numOfLayers = 3,
+				numOfClouds = Math.ceil((screenWidth / cloudWidth) * 1.5),
+				thisCloud,
+				cloudTop,
+				offset = -50,
+				negOrPos;
+
+				for (var i = 0; i <= numOfLayers; i += 1) {
+					for (var j = 0; j <= numOfClouds; j += 1) {
+						thisCloud = $("<div class='cloud med' style='top: 565px; z-index:" + (i * 10) + "; left:" + ((500 * j) + offset) + "px;'></div>");
+						thisCloud.appendTo($cloudContainer);
+
+						//get ranom offset between -300 and 300 for next cloud
+						negOrPos = Math.round(Math.random()) * 2 - 1;
+						offset = Math.floor((Math.random()*200)+1) * negOrPos;
+					}
+
+					//reset for next loop
+					j = 0; 
+				}
+		}
+
 		blueOx.bindNavScrollEvents = function() {
 			var that = this;
 			if (window.addEventListener) {
@@ -117,6 +143,24 @@ $(document).ready(function() {
 			    typewatch(function(){
 					that.checkForNavChange($nav);
 				}, 10 ); // wait 1/100 of a second to fire again (this actually saves a lot)
+			});
+
+			//scrollTo events
+			$homeLink.click(function(e) {
+				e.preventDefault();
+				$.scrollTo( '#home', 800);
+			});
+			$valuesLink.click(function(e) {
+				e.preventDefault();
+				$.scrollTo( '#values', 800);
+			});
+			$servicesLink.click(function(e) {
+				e.preventDefault();
+				$.scrollTo( '#services', 800);
+			});
+			$contactLink.click(function(e) {
+				e.preventDefault();
+				$.scrollTo( '#contact', 800);
 			});
 		}
 
