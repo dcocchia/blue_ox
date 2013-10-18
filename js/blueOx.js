@@ -178,6 +178,82 @@ $(document).ready(function() {
 			});
 		}
 
+		blueOx.bindSubmit = function() {
+			var that = this;
+			$("#contactForm").find("#submitContactForm").click(function(e) {
+				e.preventDefault();
+
+				that.submitContactForm();
+			});
+		}
+
+		blueOx.submitContactForm = function() {
+			var $form = $("#contactForm"),
+			$emailAddress = $form.find("#emailAddress").val(),
+			$name = $form.find("#name").val(),
+			$message = $form.find("#message").val(),
+			$telephoneNumber = $form.find("#telephoneNumber").val(),
+			settings = {
+				type: "POST",
+				data: {
+					name: $name,
+					emailAddress: $emailAddress,
+					telephoneNumber: $telephoneNumber,
+					message: $message
+				},
+				url: "inc/send_form_email.php",
+				success: function( data ) { 
+					var parsedData = JSON.parse(data);
+
+					if (parsedData.success === "yes") {
+						$form.html("<h2 class='contactFormSubmitTextHeader'>Thanks!</h2><div class='contactFormSubmitText'>" + parsedData.msg + "</div>");
+					} else {
+						//throw error
+						$form.html("<h2 class='contactFormSubmitTextHeader'>Uh oh!</h2><div class='contactFormSubmitText'>" + parsedData.msg + "</div>");
+					}
+
+					console.log(parsedData); 
+				},
+				error: function( a,b,c ) { 
+					console.warn("There was an error submitting the form: ", a,b,c);
+					$form.html("<h2 class='contactFormSubmitTextHeader submitError'>Uh oh!</h2><div class='contactFormSubmitText submitError'>There was a problem submitting that form. Sorry about that! <br> You can email us directly at <a href='mailto:jason@blueoxcleaning.com'>Jason@BlueOxCleaning.com</a><span>We saved your message below, for your copy/paste pleasure</span><textarea>" +  $form.find("#message").val() + "</textarea></div>");
+				}
+			};
+
+			if (this.verifyForm($form)) {
+				$.ajax(settings);
+			}
+		}
+
+		blueOx.verifyForm = function($form) {
+			var $thingsToCheck = $form.find(".checkMe"),
+				$emailAddress = $form.find("#emailAddress").val(),
+				somethingNotDone = false,
+				validateEmail = function(email) { 
+					var re = /\S+@\S+\.\S+/; //very simply email validation. The server does a more intense validation after submit
+					return re.test(email);
+				};
+
+			$thingsToCheck.each( function() {
+				$this = $(this);
+				if ($this.val() === "" || $this.val() === null || $this.val() === undefined) {
+					$this.addClass('error');
+					somethingNotDone = true;
+				} else {
+					$this.removeClass('error');
+				}
+			});
+
+			if (!validateEmail($emailAddress)) {
+				somethingNotDone = true;
+				$form.find("#emailAddress").addClass('error');
+			} else {
+				$form.find("#emailAddress").removeClass('error');
+			}
+
+			return (!somethingNotDone);
+		}
+
 		return blueOx; //export the BlueOx object and any function/vars inside it
 	}(jQuery));
 
@@ -187,4 +263,6 @@ $(document).ready(function() {
 $(document).ready(function() {
 	BlueOx.flipper.startFlipping();
 	BlueOx.bindNavScrollEvents();
+	BlueOx.instateClouds();
+	BlueOx.bindSubmit();
 });

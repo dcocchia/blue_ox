@@ -300,6 +300,8 @@ nav li a.selected {
 	font-size: 22px;
 	color: #FF5600;
 	font-family: gsBold;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.85);
 }
 
 .contactContainerRight textarea {
@@ -311,6 +313,14 @@ nav li a.selected {
 	font-size: 22px;
 	color: #FF5600;
 	font-family: gsBold;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.85);
+}
+
+.contactContainerRight input.error,
+.contactContainerRight textarea.error {
+	background-color: red;
+	color: #FFF;
 }
 
 .contactContainerRight button {
@@ -363,6 +373,42 @@ nav li a.selected {
 	float: left;
 	top: -88px;
 	position: relative;
+}
+
+footer {
+	background: url(../img/ground-small3.png) 0 0;
+	color: #fff;
+	font-family: gsBold;
+	height: 100px;
+	font-size: 18px;
+	position: relative;
+}
+
+footer span {
+	bottom: 15px;
+	position: absolute;
+	padding-left: 20px;
+	padding-right: 15px;
+	border-right: 1px solid #fff;
+	border-top: 1px solid #fff;
+}
+
+.submitError {
+	color: #fff;
+}
+
+.submitError span {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.submitError a {
+	color: #FF5600;
+}
+
+.submitError a:hover {
+	color: #fff;
 }
 
   /********************/
