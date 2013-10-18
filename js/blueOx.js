@@ -1,6 +1,20 @@
 $(document).ready(function() {
 
 	var BlueOx = (function ($) {
+
+		//IE fix for indexOf :(
+		if (!('indexOf' in Array.prototype)) {
+		    Array.prototype.indexOf= function(find, i /*opt*/) {
+		        if (i===undefined) i= 0;
+		        if (i<0) i+= this.length;
+		        if (i<0) i= 0;
+		        for (var n= this.length; i<n; i++)
+		            if (i in this && this[i]===find)
+		                return i;
+		        return -1;
+		    };
+		}
+
 		var blueOx = {}; //exported global var
 
 		var Scroller = skrollr.init();
@@ -57,7 +71,7 @@ $(document).ready(function() {
 			 	headerPos = 0,
 			 	valuesPos = 600,
 			 	servicesPos = 3400,
-			 	contactPos = 4775;
+			 	contactPos = 4195;
 
 			 var clearNavSelected = function() {
 			 	$selectedNav.removeClass("selected");

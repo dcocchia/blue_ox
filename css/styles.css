@@ -262,12 +262,71 @@ nav li a.selected {
 .contactOuterWrapper h2 {
 	margin: 0;
 	font-size: 60px;
-	text-align: right;
 	color: #FF5600;
+}
+
+.contactWrapper {
+	height: 100%;
+}
+
+.contactContainerLeft {
 	width: 45%;
+	height: 50%;
+	float: left;
+	padding-right: 50px;
 	border-right: 1px solid #fff;
 	border-top: 1px solid #fff;
-	padding-right: 50px;
+	text-align: right;
+}
+
+.contactContainerRight {
+	float: right;
+	width: 45%;
+	border-left: 1px solid #fff;
+	border-top: 1px solid #fff;
+	padding-left: 50px;
+}
+
+.contactContainerRight form {
+	padding-top: 20px;
+}
+
+.contactContainerRight input {
+	display: block;
+	width: 400px;
+	height: 30px;
+	margin-bottom: 5px;
+	padding: 5px;
+	font-size: 22px;
+	color: #FF5600;
+	font-family: gsBold;
+}
+
+.contactContainerRight textarea {
+	display: block;
+	width: 500px;
+	height: 250px;
+	margin-bottom: 5px;
+	padding: 6px;
+	font-size: 22px;
+	color: #FF5600;
+	font-family: gsBold;
+}
+
+.contactContainerRight button {
+	padding: 10px 20px 10px 20px;
+	font-family: gsBold;
+	background: #06799F;
+	border-color: #FFF;
+	border-radius: 5px;
+	font-size: 22px;
+	width: 514px;
+	color: #fff;
+}
+
+.contactContainerRight button:hover {
+	background-color: #003749;
+	cursor: pointer;
 }
 
 .clouds {
