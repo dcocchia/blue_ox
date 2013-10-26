@@ -116,7 +116,7 @@ $(document).ready(function() {
 				$cloudContainer = $(".clouds"),
 				cloudWidth = 500,
 				numOfLayers = 3,
-				numOfClouds = Math.ceil((screenWidth / cloudWidth) * 1.5),
+				numOfClouds = Math.ceil((screenWidth / cloudWidth) * 3),
 				thisCloud,
 				cloudTop,
 				offset = -50,
@@ -125,7 +125,7 @@ $(document).ready(function() {
 				for (var i = 0; i <= numOfLayers; i += 1) {
 					for (var j = 0; j <= numOfClouds; j += 1) {
 						thisOffset = ((500 * j) + offset);
-						thisCloud = $("<div class='cloud med drop skrollable' data-0='left:" + thisOffset + " ;display:block;' data-900='left:" + (thisOffset - 20) + "px;' style='top: 565px; z-index:" + (i * 10) + "; left:" + thisOffset + "px;'></div>");
+						thisCloud = $("<div class='cloud med drop skrollable' data-0='left:" + thisOffset + "px; display:block;' data-900='left:" + (thisOffset - ((i + 1) * 30) + 20) + "px;' style='top: 565px; z-index:" + (i * 10) + "; left:" + thisOffset + "px;'></div>");
 
 						// <img src="img/branch.png" class="treeBranch drop skrollable skrollable-after" data-1300="top:100%;display:block;" data-2000="top:-40%;display:none;" style="top: 0%;display:none;" />
 

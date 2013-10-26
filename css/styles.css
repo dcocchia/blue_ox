@@ -127,6 +127,8 @@ nav li a.selected {
 	float: left;
 	max-width: 31%;
 	height: 100%;
+	position: relative;
+	z-index: 2;
 }
 
 .building {
@@ -194,6 +196,8 @@ nav li a.selected {
 .servicesOuterWrapper {
 	height: 550px;
 	background: url(../img/ground-small3.png) 0 0;
+	z-index: 3;
+	position: relative;
 }
 
 .serviceContainer {
@@ -273,6 +277,8 @@ nav li a.selected {
 	background: url(../img/ground-small3.png) 0 0;
 	padding-top: 100px;
 	font-family: gsBold;
+	z-index: 3;
+	position: relative;
 }
 
 .contactOuterWrapper h2 {
@@ -423,10 +429,22 @@ nav li a.selected {
 	right: -10px;
 }
 
+.treeBranch2 {
+	background-repeat: no-repeat;
+	position: fixed;
+	right: -10px;
+}
+
 .bird {
 	position: fixed;
 	right: -10px;
 	width: 150px;
+}
+
+.buildingsFront,
+.buildingsBack {
+	position: fixed;
+	left: 330px;
 }
 
 footer {
