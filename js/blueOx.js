@@ -17,8 +17,6 @@ $(document).ready(function() {
 
 		var blueOx = {}; //exported global var
 
-		var Scroller = skrollr.init();
-
 		//cache common values
 		var $topMotto = $(".topTitle"),
 			mottoHeight = $topMotto.css("line-height"),
@@ -126,7 +124,11 @@ $(document).ready(function() {
 
 				for (var i = 0; i <= numOfLayers; i += 1) {
 					for (var j = 0; j <= numOfClouds; j += 1) {
-						thisCloud = $("<div class='cloud med' style='top: 565px; z-index:" + (i * 10) + "; left:" + ((500 * j) + offset) + "px;'></div>");
+						thisOffset = ((500 * j) + offset);
+						thisCloud = $("<div class='cloud med drop skrollable' data-0='left:" + thisOffset + " ;display:block;' data-900='left:" + (thisOffset - 20) + "px;' style='top: 565px; z-index:" + (i * 10) + "; left:" + thisOffset + "px;'></div>");
+
+						// <img src="img/branch.png" class="treeBranch drop skrollable skrollable-after" data-1300="top:100%;display:block;" data-2000="top:-40%;display:none;" style="top: 0%;display:none;" />
+
 						thisCloud.appendTo($cloudContainer);
 
 						//get ranom offset between -300 and 300 for next cloud
@@ -265,4 +267,5 @@ $(document).ready(function() {
 	BlueOx.bindNavScrollEvents();
 	BlueOx.instateClouds();
 	BlueOx.bindSubmit();
+	var Scroller = skrollr.init();
 });
