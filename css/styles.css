@@ -521,22 +521,21 @@ footer span {
 
 }
 
-.bubbles {
-	z-index: 50;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: url(../img/bubbles.png) repeat 0 0;
-	position: fixed;
+@media only screen 
+and (max-width : 1040px) { 
+	.serviceListLeft,
+	contactContainerLeft {
+		padding-right: 20px;
+	}
+
+	.serviceListRight,
+	.contactContainerRight {
+		padding-left: 20px;
+	}
 }
 
-.bubbles2 {
-	z-index: 49;
-	background-image: url(../img/bubbles2.png);
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	position: fixed;
+@media (max-width : 1000px) { 
+	.valuesWrapper {
+		width: 60%;
+	}
 }
