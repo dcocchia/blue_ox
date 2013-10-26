@@ -372,6 +372,11 @@ nav li a.selected {
 	cursor: pointer;
 }
 
+.contactFormSubmitText {
+	font-size: 26px;
+	color: #fff;
+}
+
 .clouds {
 	height: 230px;
 }
