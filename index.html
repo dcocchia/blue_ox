@@ -3,35 +3,174 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Blue Ox Cleaning</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Blue Ox Cleaning" />
+		<meta name="description" content="Whether your company has a small office or multiple offices , Blue Ox Cleaning has the trained professionals to exceed your expectations. Our commercial office cleaning services can be tailored to fit your company's busy work schedule on a daily, weekly, or bi-weekly basis. We have knowledgeable, trained staff, custom cleaning programs and superior equipment to handle any office building.">
+		<meta property="og:title" content="Blue Ox Cleaning -- We'll Make you shine!" />
+		<meta property="og:url" content="http://www.blueoxcleaning.com" />
+		<meta property="og:type" content="website" />
+		<meta property="og:description" content="Whether your company has a small office or multiple offices , Blue Ox Cleaning has the trained professionals to exceed your expectations. Our commercial office cleaning services can be tailored to fit your company's busy work schedule on a daily, weekly, or bi-weekly basis. We have knowledgeable, trained staff, custom cleaning programs and superior equipment to handle any office building." />
+
+		<link rel="shortcut icon" href="img/ico/favicon.ico">
+
 		<!-- Style Sheets -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="lib/fontawesome/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="css/placeHolderStyle.css">
+
+		<script src="lib/html5shiv.js"></script>
 	</head>
-	<body>
-		<header>
+	<body style="height: 2000px">
+		<header id="home">
 			<h1>Blue Ox Cleaning</h1>
-			<img src="img/BlueOXLogoWhite-Small.png"/>
-		</header>
-		<section id="contactSection">
-			<div id="contactInfo"> 
-				<div class="message">
-					<h2>Coming Soon!</h2>
-					<span>Our new site isn't ready just yet. Sorry about that!</span>
-					<span>If you need to get a hold of us in the mean time, call or email us below.</span>
+			<img src="img/BlueOxLogoWhite-Small.png" class="mainLogo"/>
+			<h3>
+				<div id="subTitles" class="subTitles">
+					<div class="flipTitle topTitle">Friendly</div>
+					<div class="flipTitle">Loyal</div>
+					<div class="flipTitle">Wise</div>
+					<div class="flipTitle">Determined</div>
+					<div class="flipTitle">Trustworthy</div>
 				</div>
-				<div class="contact">
+			</h3>
+		</header>
+		<nav>
+			<ul class="stitched">
+				<li><a href="#home" id="homeLink" class="selected">Home</a></li>
+				<li><a href="#values" id="valuesLink">Values</a></li>
+				<li><a href="#services" id="servicesLink">Services</a></li>
+				<li><a href="#contact" id="contactLink">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="clouds"></div>
+		</div>
+		<section>
+			<div id="values" class="valuesOuterWrapper">
+				<div id="buildingWrapper" class="buildingWrapper">
+					<img class="building" src='img/building.png' />
+				</div>
+				<div class="valuesWrapper">
+					<div class="paralaxProps">
+						<img src="img/branch2.png" class="treeBranch2 drop skrollable skrollable-after" data-1200="top:100%;display:block;" data-1900="top:-85%;display:none;" style="top: 0%;display:none;" />
+						<img src="img/branch.png" class="treeBranch drop skrollable skrollable-after" data-1300="top:100%;display:block;" data-2000="top:-40%;display:none;" style="top: 0%;display:none;" />
+						<img src="img/bird-large.png" class="bird drop skrollable skrollable-after" data-0="display:none;"; data-2700="left:-15%;top:20%;display:block;" data-3400="top:-20%;display:none;left:100%;" style="top:10%;display:none;" />
+						<!-- Background buildings -->
+						<img src="img/buildingsFront.png" class="buildingsFront drop skrollable skrollable-after" data-0="position:fixed; bottom:-550px; left: 330px;" data-3000="position:fixed; bottom:0px; left: 330px;" />
+						<img src="img/buildingsBack.png" class="buildingsBack drop skrollable skrollable-after" data-0="position:fixed; bottom:-800px; left: 330px;" data-3000="position:fixed; bottom:0px; left: 330px;"/>
+					</div>
 					<ul>
-						<li><i class="icon-phone-sign"></i>(651) 328-9066</li>
-						<li><i class="icon-envelope"></i><a href="mailto:jason@blueoxcleaning.com">Jason@BlueOxCleaning.com</a></li>
+						<li>
+							<h3>Loyal<i class="icon-umbrella"></i></h3>
+							<span>We want to make sure each of our clients is treated like our only client. We'll work hard to keep up a personal relationship with you to make sure we're meeting your needs. </span>
+						</li>
+
+						<li>
+							<h3>Wise<i class="icon-book"></i></h3>
+							<span>We've been doing this a long time. With over fifteen years of cleaning and maintenance experience, no job surprises us. </span>
+						</li>
+
+						<li>
+							<h3>Determined<i class="icon-shield"></i></h3>
+							<span>No job is too hard for us. We take care of the difficult work you don't want to worry about. </span>
+						</li>
+
+						<li>
+							<h3>Trustworthy<i class="icon-lock"></i></h3>
+							<span>We believe so deeply in our service and commitment that we'll give you the first cleaning free. No strings attached. </span>
+						</li>
+
+						<li>
+							<h3>Friendly<i class="icon-smile"></i></h3>
+							<span>We're easy to work with because we like what we do and we always keep a positive attitude. With regular checkins, we'll do our best to keep you happy, too.</span>
+						</li>
 					</ul>
+				</div>
+				<div class="grass">
+				</div>
+				<div class="flower">
+				</div>
+			</div>
+			<div id="services" class="servicesOuterWrapper">
+				<div class="serviceContainer">
+					<div class="serviceListLeft">
+						<h2><i class="icon-trash"></i>The Basics</h2>
+						<ul>
+							<li>Waste removal / recycling</li>
+							<li>Dusting</li>
+							<li>Bathrom cleaning / stocking</li>
+							<li>Indoor widow cleaning</li>
+						</ul>
+					</div>
+					<div class="serviceListRight">
+						<h2>Floor Care <i class="icon-tint"></i></h2>
+						<ul>
+							<li>Floor stripping and waxing</li>
+							<li>Deep carpet cleaning</li>
+							<li>Burnishing</li>
+							<li>Vacuuming / sweeping / mopping </li>
+						</ul>
+					</div>
+				</div>
+				<div class="serviceContainer">
+					<div class="serviceListLeft">
+						<h2><i class="icon-wrench"></i> Maintenance</h2>
+						<ul>
+							<li>Light bulb replacement / ballast replacement</li>
+							<li>Air filter replacement</li>
+						</ul>
+					</div>
+					<div class="serviceListRight">
+						<h2>Specialties <i class="icon-gears"></i></h2>
+						<ul>
+							<li>Need something special? Just ask!</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="contact" class="contactOuterWrapper">
+				<div class="contactWrapper">
+					<div class="contactContainerLeft">
+						<h2>Contact us!</h2>
+					</div>
+					<div class="contactContainerRight">
+						<div class="call">
+							<h2>Call</h2>
+							<i class="icon-phone"></i> <span>(651) 328-9066</span>
+						</div>
+						
+						<form id="contactForm" class="email">
+							<h2>Email</h2>
+							<input id="name" type="text" placeholder="Name" class="checkMe"/>
+				   			<input id="telephoneNumber" type="tel" placeholder="Telephone Number (Optional)" class=""/>
+				   			<input id="emailAddress" type="email" placeholder="Email Address" class="checkMe"/>
+				   			<textarea  id="message" type="text" placeholder="Your Message" class="checkMe"></textarea>
+				   			<button id ="submitContactForm">Submit</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</section>
+
+<!-- 		<div class="bubbles" data-0="background-position:0px 0px;" data-end="background-position:-500px -2000px;">
+
+		</div>
+		<div class="bubbles2" data-0="background-position:0px 0px;" data-end="background-position:-500px -500px;"></div> -->
+
+		<footer>
+			<span>All rights reserved &#169;2013 Blue Ox Cleaning</span>
+		</footer>
+
 		<!-- JS at bottom of body for faster page loads -->
 		<!-- JS libraries -->
 		<script src="lib/jquery-1.10.2.min.js"></script>
-		<script src="lib/html5shiv.js"></script>
+		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<script src="lib/skrollr.min.js"></script>
+		<script src="lib/jquery-scrollto.js"></script>
+		<script src="lib/placeholders.min.js"></script>
+
+		<!-- Main JS -->
+		<script src="js/blueOx.js"></script>
+		<script src="js/test.js"></script>
 	</body>
 
 </html>
