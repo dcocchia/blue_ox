@@ -60,6 +60,48 @@ header img {
 	transition: margin-top .5s ease-in-out;
 }
 
+.socialIcons{
+	background: #06799F;
+	color: #fff;
+	border: 2px dashed #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 0 4px #00678A, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+	text-shadow: -1px -1px #033444;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	position: absolute;
+	height: 125px;
+	right: -4px;
+	top: 115px;
+	width: 70px;
+}
+.socialIcons .faceBook{
+	font-size: 46px;
+}
+
+.socialIcons .faceBook a,
+.socialIcons .twitter a {
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	display: block;
+	margin-top: 10px;
+	text-shadow: 1px 1px 1px #222;
+}
+
+.socialIcons .faceBook a:hover,
+.socialIcons .twitter a:hover {
+	color: #FF5600;
+}
+
+.socialIcons .twitter{
+	font-size: 40px;
+}
+
+.socialIcons .twitter a {
+	margin-top: 5px;
+}
+
   /*===============*/
  /*   Nav styles  */
 /*===============*/
