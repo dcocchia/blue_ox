@@ -18,12 +18,12 @@ $(document).ready(function() {
 		var blueOx = {}; //exported global var
 
 		//cache common values
-		var $topMotto = $(".topTitle"),
+		var windowWidth = $(window).width(),
+			$topMotto = $(".topTitle"),
 			mottoHeight = $topMotto.css("line-height"),
 			mottoHeight = mottoHeight.slice(0, mottoHeight.indexOf('px') - 1),
 			mottoSelectedPos = 0,
-			headerHeight = 480,
-			windowWidth = $(window).width(),
+			headerHeight = (windowWidth > 500) ? 480 : 360,
 			$nav = $("nav"),
 			$selectedNav = $nav.find(".selected"),
 			selectedNav = $selectedNav.attr("id"),
@@ -45,12 +45,12 @@ $(document).ready(function() {
 			interval: "",
 			startFlipping: function() {
 				var randomPos,
-					positions = [0, -70, -140, -210, -280],
+					positions = (windowWidth > 500) ? [0, -70, -140, -210, -280] : [0, -35, -70, -105, -140],
 					positionsLastRemoved,
 					currentPos = $topMotto.css("margin-top");
 
 				this.interval = setInterval(function() {
-					positionsLastRemoved = [0, -70, -140, -210, -280];
+					positionsLastRemoved = (windowWidth > 500) ? [0, -70, -140, -210, -280] : [0, -35, -70, -105, -140];
 					positionsLastRemoved.splice(positionsLastRemoved.indexOf(mottoSelectedPos), 1);
 					randomPos = positionsLastRemoved[Math.floor(Math.random() * positionsLastRemoved.length)];
 					$topMotto.css("margin-top", randomPos + "px");
@@ -70,6 +70,12 @@ $(document).ready(function() {
 			 	valuesPos = 600,
 			 	servicesPos = 3400,
 			 	contactPos = 4195;
+
+			if (windowWidth < 500) {
+			 	valuesPos = 360,
+			 	servicesPos = 2445,
+			 	contactPos = 2900;
+			}
 
 			 var clearNavSelected = function() {
 			 	$selectedNav.removeClass("selected");
@@ -118,14 +124,14 @@ $(document).ready(function() {
 				numOfLayers = 3,
 				numOfClouds = Math.ceil((screenWidth / cloudWidth) * 3),
 				thisCloud,
-				cloudTop,
-				offset = -50,
+				cloudTop = (windowWidth > 500) ? 565 : 380,
+				offset = (windowWidth > 500) ? -50 : -10,
 				negOrPos;
 
 				for (var i = 0; i <= numOfLayers; i += 1) {
 					for (var j = 0; j <= numOfClouds; j += 1) {
 						thisOffset = ((500 * j) + offset);
-						thisCloud = $("<div class='cloud med drop skrollable' data-0='left:" + thisOffset + "px; display:block;' data-900='left:" + (thisOffset - ((i + 1) * 30) + 20) + "px;' style='top: 565px; z-index:" + (i * 10) + "; left:" + thisOffset + "px;'></div>");
+						thisCloud = $("<div class='cloud med drop skrollable' data-0='left:" + thisOffset + "px; display:block;' data-900='left:" + (thisOffset - ((i + 1) * 30) + 20) + "px;' style='top:" + cloudTop + "px; z-index:" + (i * 10) + "; left:" + thisOffset + "px;'></div>");
 
 						// <img src="img/branch.png" class="treeBranch drop skrollable skrollable-after" data-1300="top:100%;display:block;" data-2000="top:-40%;display:none;" style="top: 0%;display:none;" />
 
@@ -256,6 +262,22 @@ $(document).ready(function() {
 			return (!somethingNotDone);
 		}
 
+		blueOx.adjustBackgroundForMobile = function() {
+			$buildingsFront = $(".buildingsFront"),
+			$buildingsBack = $(".buildingsBack");
+
+			$buildingsFront.attr("data-0", "position:fixed; bottom:-800px; left: -100px;display:initial");
+			$buildingsFront.removeAttr('data-3000');
+			$buildingsFront.attr("data-2140", "position:fixed; bottom:0px; left: -100px;display:initial");
+			$buildingsFront.attr("data-2555", "position:fixed; bottom:0px; left: -100px; display:none");
+
+			$buildingsBack.attr("data-0", "position:fixed; bottom:-800px; left: -100px;display:initial");
+			$buildingsBack.removeAttr('data-3000');
+			$buildingsBack.attr("data-2140", "position:fixed; bottom:0px; left: -100px;display:initial");
+			$buildingsBack.attr("data-2555", "position:fixed; bottom:0px; left: -100px; display:none");
+
+		}
+
 		return blueOx; //export the BlueOx object and any function/vars inside it
 	}(jQuery));
 
@@ -267,5 +289,12 @@ $(document).ready(function() {
 	BlueOx.bindNavScrollEvents();
 	BlueOx.instateClouds();
 	BlueOx.bindSubmit();
-	var Scroller = skrollr.init();
+
+	if ($(window).width() < 500) {
+		BlueOx.adjustBackgroundForMobile();
+	} else {
+		var Scroller = skrollr.init();
+	}
+
+	
 });

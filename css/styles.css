@@ -238,13 +238,26 @@ nav li a.selected {
 .servicesOuterWrapper {
 	height: 550px;
 	background: url(../img/ground-small3.png) 0 0;
-	z-index: 3;
+	z-index: 1;
 	position: relative;
 }
 
 .serviceContainer {
 	color: #fff;
 	font-family: gsBold;
+}
+
+.serviceContainer {
+	position: absolute;
+	width: 100%;
+}
+
+.serviceContainer.top {
+	top: 20px;
+}
+
+.serviceContainer.bottom {
+	top: 220px;
 }
 
 .serviceContainer h2 {
@@ -568,6 +581,10 @@ footer span {
 
 }
 
+  /**************************/
+ /*   Responsive styles    */
+/**************************/
+
 @media only screen 
 and (max-width : 1040px) { 
 	.serviceListLeft,
@@ -584,5 +601,200 @@ and (max-width : 1040px) {
 @media (max-width : 1000px) { 
 	.valuesWrapper {
 		width: 60%;
+	}
+}
+
+@media (max-width: 99999px) {
+	body {
+		padding: 0 !important;
+	}
+}
+
+@media (max-width : 500px) {
+
+	html {
+		height: 3610px;
+	}
+
+	header {
+		height: 420px;
+	}
+
+	header img {
+		width: 100%;
+	}
+	
+	nav {
+		width: 90%;
+		height: 39px;
+		top: 105%;
+		box-shadow: -25px 4px 6px #666;
+	} 
+	
+	ul.stitched {
+		width: 100%;
+		padding: 5px;
+		font-size: 16px;
+	}
+
+	nav li {
+		margin-left: 5px;
+	}
+
+	.socialIcons {
+		width: 40px;
+		height: 90px;
+		top: 40px;
+	}
+
+	.socialIcons .faceBook {
+		font-size: 30px;
+	}
+
+	.socialIcons .twitter {
+		font-size: 28px;
+	}
+
+	.subTitles {
+		font-size: 20pt;
+		height: 35px;
+		line-height: 35px;
+	}
+
+	.clouds {
+		height: 0px;
+	}
+
+	.cloud.med {
+		background: url(../img/cloud_small.png) 0 0;
+		width: 250px;
+		height: 157px;
+	}
+
+	.building {
+		margin-left: -370px;
+		width: 560px;
+	}
+
+	.flower {
+		background: url("../img/flower-med.png");
+		height: 170px;
+		width: 100px;
+		top: 1910px;
+		left: 65%;
+	}
+
+	.treeBranch {
+		width: 180px;
+		height: 67px;
+	}
+
+	.treeBranch2 { 
+		width: 115px;
+		right: -5px;
+	}
+
+	.valuesOuterWrapper {
+		height: 2100px;
+	}
+
+	.valuesWrapper {
+		width: 67%;
+	}
+
+	.valuesWrapper li {
+		height: 375px;
+		padding: 0 10px 0 10px;
+	}
+
+	.valuesWrapper li h3 { 
+		font-size: 32px;
+	}
+
+	.valuesWrapper li span {
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	.servicesOuterWrapper {
+		height: 435px;
+	}
+
+	.serviceContainer h2 {
+		font-size: 18px;
+	}
+
+	.serviceContainer li {
+		font-size: 16px;
+	}
+
+	.serviceListLeft,
+	.contactContainerLeft {
+		padding-right: 5px;
+	}
+
+	.serviceListRight,
+	.contactContainerRight {
+		padding-left: 5px;
+	}
+
+	.serviceListLeft,
+	.serviceListRight
+	.contactContainerRight,
+	.contactContainerLeft {
+		width: 47%;
+	}
+
+	.contactOuterWrapper {
+		background: url(../img/ground-small3.png) 0 -84px;
+		padding-top: 10px;
+		height: 520px;
+	}
+
+	.contactOuterWrapper h2,
+	.contactContainerRight .call h2,
+	.contactContainerRight .email h2 {
+		font-size: 18px;
+	}
+
+	.contactContainerRight .call {
+		font-size: 16px;
+	}
+
+	.contactContainerRight form {
+		padding-top: 10px;
+	}
+
+	.contactContainerRight input {
+		height: 15px;
+	}
+
+	.contactContainerRight input,
+	.contactContainerRight textarea {
+		width: 85%;
+		font-size: 12px;
+	}
+
+	.contactContainerRight button {
+		padding: 5px 10px 5px 10px;
+		font-size: 16px;
+		width: 95%;
+	}
+
+	footer {
+		height: 45px;
+		font-size: 12px;
+	}
+
+	footer span {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+}
+
+@media (min-width : 360px) and (max-width: 600px) { 
+	header img {
+		width: 85%;
 	}
 }
